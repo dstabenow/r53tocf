@@ -13,8 +13,8 @@ def remover(filename):
 if __name__ == "__main__":
   import sys
   if len(sys.argv) != 2:
-    print("Usage: python3 remove_lines.py <filename>")
+    print("Usage: python3 modify.py <filename>")
     exit(1)
   filename = sys.argv[1]
   remover(filename)
-  print(f"Lines not matching the pattern removed from {filename} (if any).")
+  print(f"Lines matching the pattern removed from {filename} (if any).")
