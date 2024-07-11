@@ -5,7 +5,7 @@ import re
 
 def alias_gen(domain):
     r53 = boto3.client('route53')
-    zone_id = r53.list_hosted_zones_by_name(DNSName="rtspro.dev",MaxItems="1")["HostedZones"][0]["Id"]
+    zone_id = r53.list_hosted_zones_by_name(DNSName=domain,MaxItems="1")["HostedZones"][0]["Id"]
     items = [x for x in (
         r53.get_paginator('list_resource_record_sets')
         .paginate(HostedZoneId=zone_id)
@@ -63,8 +63,3 @@ if __name__ == "__main__":
   domain = sys.argv[2]
   remover(filename)
   print(f"Lines not matching the pattern removed from {filename}. Aliases constructed and added favoring us-east-2.")
-
-
-
-
-
