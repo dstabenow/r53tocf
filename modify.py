@@ -52,7 +52,7 @@ def remover(filename, domain):
             if not re.search(pattern, line):
                 f.write(re.sub(r"\.\s+(\d+)\s+IN\s+", f".      1      IN      ", line))
         for line in alias_gen(domain):
-            f.write(line)
+            f.write(line+"\n")
 
 if __name__ == "__main__":
   import sys
