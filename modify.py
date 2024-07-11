@@ -59,7 +59,5 @@ if __name__ == "__main__":
   if len(sys.argv) != 3:
     print("Usage: python3 remove_lines.py <filename> <domain>")
     exit(1)
-  filename = sys.argv[1]
-  domain = sys.argv[2]
-  remover(filename)
+  remover(sys.argv[1], sys.argv[2])
   print(f"Lines not matching the pattern removed from {filename}. Aliases constructed and added favoring us-east-2.")
