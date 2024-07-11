@@ -13,10 +13,10 @@ fi
 echo "Domain information exported to $domain.txt"
 echo "Debug log exported to $domain.err.log"
 
-removelines="python3 modify.py $domain.txt"
+removelines="python3 modify.py $domain.txt $domain"
 eval "$removelines"
 if [[ $? -ne 0 ]]; then
-  echo "Error: remove_lines.py script failed."
+  echo "Error: modify.py script failed."
 fi
 echo "NS and SOA records removed from $domain.txt"
 
