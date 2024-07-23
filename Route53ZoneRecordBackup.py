@@ -17,6 +17,7 @@ class Route53Gatherer(object):
         self.GatherHostedZones()
         for HostedZone in self.hosted_zones:
             HostedZone["ResourceRecordSets"] = self.GatherHostedZoneRecords(HostedZone["Id"])
+            assert len(HostedZone["ResourceRecordSets"]) == HostedZone["ResourceRecordSetCount"]
             self.items.append(HostedZone)
         self.WriteFile()
     def GatherHostedZones(self):
