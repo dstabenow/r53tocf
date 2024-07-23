@@ -44,4 +44,5 @@ if __name__ == "__main__":
         exit(1)
     x = Route53Gatherer()
     x.Run()
-    print(f"ResourceRecords from all HostedZones have been written to {x.filename} ")
+    print(f"ResourceRecords from all HostedZones have been written to /home/cloudshell-user/r53tocf/{x.filename} ")
+    
